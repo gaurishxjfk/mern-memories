@@ -1,5 +1,18 @@
 import * as api from '../api';
-import { FETCH, CREATE, UPDATE, DELETE, FETCH_BY_SEARCH, START_LOADING, STOP_LOADING, FETCH_BY_ID, REDIRECT_TO_HOME, COMMENT } from '../constants/actionTypes'
+import {
+    FETCH,
+    CREATE,
+    UPDATE,
+    DELETE,
+    FETCH_BY_SEARCH,
+    START_LOADING,
+    STOP_LOADING,
+    FETCH_BY_ID,
+    REDIRECT_TO_HOME,
+    COMMENT,
+    STOP_LOADING_POST,
+    START_LOADING_POST
+} from '../constants/actionTypes'
 
 export const getPosts = (page) => async (dispatch) => {
     try {
@@ -25,10 +38,10 @@ export const getPostBySearch = (searchQuery) => async (dispatch) => {
 
 export const getPostsById= (postId) => async (dispatch) => {
     try {
-        dispatch({ type: START_LOADING })
+        dispatch({ type: START_LOADING_POST })
         const { data } = await api.fetchPostById(postId)
         dispatch({ type: FETCH_BY_ID, payload: data})
-        dispatch({ type: STOP_LOADING })
+        dispatch({ type: STOP_LOADING_POST })
     } catch (error) {
         dispatch({ type: REDIRECT_TO_HOME })
         console.log(error.message)

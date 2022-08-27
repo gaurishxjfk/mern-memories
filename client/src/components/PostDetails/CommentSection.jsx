@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react'
-import { Typography, TextField, Button } from '@material-ui/core';
+import { Typography, TextField, Button, Divider } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
 import useStyles from './styles'
@@ -37,6 +37,7 @@ const CommentSection = ({ post }) => {
                 }
                 <div ref={commentsRef} />
             </div>
+            <Divider style={{ margin: '20px 0' }} />
             {user?.result && <div style={{ width: '70%' }}>
                 <Typography gutterBottom variant='h6'>Write a Comment</Typography>
                 <TextField

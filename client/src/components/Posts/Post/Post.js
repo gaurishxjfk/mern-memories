@@ -66,7 +66,10 @@ const Post = ({ post, setCurrentId }) => {
                 </CardContent>
             
             <CardActions className={classes.cardActions}>
-                <Button size='small' color='primary' disabled={!user?.result} onClick={() => dispatch(likePost(post._id))}>                    
+                <Button size='small' color='primary' disabled={!user?.result} onClick={() => {
+                    dispatch(likePost(post._id))
+                    window.gtag("event", "post_clicked")
+                    }}>                    
                 <Likes />
                 </Button>
                 {(user?.result?.sub === post?.creator || user?.result?._id === post?.creator) && (

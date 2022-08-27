@@ -17,7 +17,7 @@ const Auth = () => {
     const dispatch = useDispatch();
     let navigate = useNavigate();
 
-    const [isSignUp, setIsSignUp] = useState(true);
+    const [isSignUp, setIsSignUp] = useState(false);
     const [formData, setFormData] = useState(initialData)
     const [showPassword, setShowPassword] = useState(false);
 

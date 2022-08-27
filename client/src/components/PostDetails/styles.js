@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     borderRadius: '20px',
     objectFit: 'cover',
     width: '100%',
-    maxHeight: '600px',
+    maxHeight: '500px',
 
   },
   card: {
@@ -38,7 +38,7 @@ export default makeStyles((theme) => ({
     display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px', borderRadius: '15px', height: '39vh',
   },
   commentOuterContainer: {
-    display: 'flex', justifyContent: 'space-between'
+    display: 'flex', flexDirection: 'column-reverse'
   },
   commentInnerContainer: {
     height: '200px', overflow: 'auto', marginRight: '30px'

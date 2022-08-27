@@ -1,5 +1,5 @@
-import { FETCH, CREATE, UPDATE, DELETE, FETCH_BY_SEARCH, START_LOADING, STOP_LOADING, FETCH_BY_ID, REDIRECT_TO_HOME, COMMENT } from '../constants/actionTypes'
-export default (state = { isLoading: true, posts: [] },action) => {
+import { FETCH, CREATE, UPDATE, DELETE, FETCH_BY_SEARCH, START_LOADING, STOP_LOADING, FETCH_BY_ID, REDIRECT_TO_HOME, COMMENT, START_LOADING_POST, STOP_LOADING_POST } from '../constants/actionTypes'
+export default (state = { isLoading: true, isLoadingPost: true, posts: [] },action) => {
     switch (action.type) {        
         case FETCH :
             return {
@@ -40,6 +40,10 @@ export default (state = { isLoading: true, posts: [] },action) => {
             return { ...state, isLoading: true };
         case STOP_LOADING :
             return { ...state, isLoading: false} ;
+        case START_LOADING_POST :
+            return { ...state, isLoadingPost: true };
+        case STOP_LOADING_POST :
+            return { ...state, isLoadingPost: false} ;
         case REDIRECT_TO_HOME :
             return { ...state, redirectToHome: true }
         default:
